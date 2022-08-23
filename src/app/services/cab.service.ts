@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Cab } from '../models/cab.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +11,8 @@ export class CabService {
 
   constructor(private http: HttpClient) { }
 
-  getCabs() {
-    return this.http.get(this.rootURL);
+  getCabs(): Observable<Cab[]> {
+    return <Observable<Cab[]>>this.http.get(this.rootURL);
   }
 
   getCabById(cabId: number) {
