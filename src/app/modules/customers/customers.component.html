@@ -1,15 +1,16 @@
 <div class="col-12">
-  <div>
-    <h1>Customers</h1>
+  <div class="d-flex col-12 w-100">
+    <div class="w-100">
+      <h1>Customers</h1>
+    </div>
+    <button mat-fab color="primary">
+      <mat-icon>add</mat-icon>
+    </button>
   </div>
 
   <mat-form-field appearance="standard">
     <mat-label>Filter</mat-label>
-    <input
-      matInput
-      (keyup)="applyFilter($event)"
-      #input
-    />
+    <input matInput (keyup)="applyFilter($event)" #input />
   </mat-form-field>
 
   <table

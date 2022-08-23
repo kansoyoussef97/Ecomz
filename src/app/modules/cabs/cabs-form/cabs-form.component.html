@@ -1,0 +1,43 @@
+<div class="col-8 offset-2 p-4 text-center">
+  <mat-card class="shadow bg-white">
+    <div class="text-center mb-4">
+      <mat-card-title>
+        <h2>Cab</h2>
+      </mat-card-title>
+    </div>
+    
+    <form [formGroup]="cabsForm" novalidate>
+    <mat-card-content>
+        <div class="row mb-4">
+          <div class="col-12 d-flex">
+            <mat-form-field class="w-100 m-auto" appearance="fill">
+              <mat-label>Owner</mat-label>
+              <input formControlName="owner" matInput />
+            </mat-form-field>
+          </div>
+
+          <div class="col-12 d-flex">
+            <mat-form-field class="w-100 m-auto" appearance="fill">
+              <mat-label>Model</mat-label>
+              <input formControlName="model" matInput />
+            </mat-form-field>
+          </div>
+
+          <div class="col-12 d-flex">
+            <mat-form-field class="w-100 m-auto" appearance="fill">
+              <mat-label>Number</mat-label>
+              <input formControlName="number" matInput />
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-card-content>
+    </form>
+    <mat-card-actions>
+      <button button mat-flat-button color="primary" (click)="onSave()">Save</button>
+      <button mat-button color="primary" (click)="onGoBack()">Cancel</button>
+    </mat-card-actions>
+    <mat-card-footer>
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </mat-card-footer>
+  </mat-card>
+</div>

@@ -15,8 +15,8 @@ export class CabService {
     return <Observable<Cab[]>>this.http.get(this.rootURL);
   }
 
-  getCabById(cabId: number) {
-    return this.http.get(this.rootURL + `/${cabId}`);
+  getCabById(cabId: number): Observable<Cab> {
+    return <Observable<Cab>>this.http.get(this.rootURL + `/${cabId}`);
   }
 
   addCab(cabData: any) {
