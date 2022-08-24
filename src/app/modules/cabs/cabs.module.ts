@@ -15,6 +15,9 @@ import { CabsFormComponent } from './cabs-form/cabs-form.component';
 import { EditCabsComponent } from './edit-cabs/edit-cabs.component';
 import { NewCabsComponent } from './new-cabs/new-cabs.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ConfirmationDialogModule } from 'src/app/shared/confirmation-dialog/confirmation-dialog.module';
+import { LoaderModule } from 'src/app/shared/loader/loader.module';
 
 
 @NgModule({
@@ -37,6 +40,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatIconModule,
     MatCardModule,
     MatProgressBarModule,
+    MatDialogModule,
+    ConfirmationDialogModule,
+    LoaderModule,
   ]
 })
 export class CabsModule { }

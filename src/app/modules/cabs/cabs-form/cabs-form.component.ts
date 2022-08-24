@@ -1,7 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import {
   FormBuilder,
-  FormControl,
   FormGroup,
   Validators,
 } from '@angular/forms';
@@ -30,7 +29,6 @@ export class CabsFormComponent implements OnInit, OnDestroy {
     private router: Router,
     private cabService: CabService
   ) {
-    this.initServiceForm();
   }
 
   ngOnInit(): void {
@@ -86,14 +84,6 @@ export class CabsFormComponent implements OnInit, OnDestroy {
     .subscribe((response) => {
       console.log(response)
       this.onGoBack();
-    });
-  }
-
-  private initServiceForm(): void {
-    this.cabsForm = this.fb.group({
-      owner: ['', Validators.required],
-      model: ['', Validators.required],
-      number: ['', Validators.required],
     });
   }
 

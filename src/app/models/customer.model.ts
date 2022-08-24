@@ -1,6 +1,6 @@
 export interface Customer {
     address: Address;
-    id: string;
+    id?: string;
     name: string;
 }
 

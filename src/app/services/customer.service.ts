@@ -16,16 +16,16 @@ export class CustomerService {
     return <Observable<Customer[]>>this.http.get(this.rootURL);
   }
 
-  getCustomerById(CustomerId: number) {
-    return this.http.get(`${this.rootURL}/${CustomerId}`);
+  getCustomerById(CustomerId: number): Observable<Customer> {
+    return <Observable<Customer>>this.http.get(`${this.rootURL}/${CustomerId}`);
   }
 
-  addCustomer(CustomerData: any) {
+  addCustomer(CustomerData: Customer) {
     return this.http.post(this.rootURL, CustomerData);
   }
 
-  editCustomer(CustomerData: any) {
-    return this.http.put(this.rootURL, CustomerData);
+  editCustomer(CustomerId: number, CustomerData: Customer) {
+    return this.http.put(`${this.rootURL}/${CustomerId}`, CustomerData);
   }
 
   deleteCustomer(CustomerId: number) {
