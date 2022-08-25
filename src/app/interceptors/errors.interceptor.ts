@@ -8,7 +8,6 @@ import {
 } from '@angular/common/http';
 import { catchError, Observable, throwError } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { NotificationComponent } from '../shared/notification/notification.component';
 
 @Injectable()
 export class ErrorsInterceptor implements HttpInterceptor {
