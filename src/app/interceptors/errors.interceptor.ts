@@ -7,25 +7,33 @@ import {
   HttpErrorResponse
 } from '@angular/common/http';
 import { catchError, Observable, throwError } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { NotificationComponent } from '../shared/notification/notification.component';
 
 @Injectable()
 export class ErrorsInterceptor implements HttpInterceptor {
 
-  constructor() {}
+  constructor(private _snackBar: MatSnackBar) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     return next.handle(request)
     .pipe(
       catchError((error: HttpErrorResponse) => {
           let errorMsg = '';
+
           if (error.error instanceof ErrorEvent) {
-              console.log('This is client side error');
               errorMsg = `Error: ${error.error.message}`;
+              this._snackBar.open(`${error.error}`, 'CLose', {
+                horizontalPosition: 'end',
+                verticalPosition: 'top',
+              });
           } else {
-              console.log('This is server side error');
               errorMsg = `Error Code: ${error.status},  Message: ${error.message}`;
+              this._snackBar.open(`${error.error}`, 'Close', {
+                horizontalPosition: 'end',
+                verticalPosition: 'top',
+              });
           }
-          console.log(errorMsg);
           return throwError(() => errorMsg);
         })
     );

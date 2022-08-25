@@ -56,7 +56,6 @@ export class CustomersFormComponent implements OnInit {
   }
 
   onGoBack(): void {
-    console.log(11);
     this.router.navigate(['/customers']);
   }
 
@@ -70,7 +69,6 @@ export class CustomersFormComponent implements OnInit {
   }
 
   private editCustomer(customerData: Customer): void {
-    console.log(customerData, 'edit');
     this.customerService
       .editCustomer(this.id!, customerData)
       .pipe(takeUntil(this.destroy$))
@@ -80,7 +78,6 @@ export class CustomersFormComponent implements OnInit {
   }
 
   private newCustomer(customerData: Customer): void {
-    console.log(customerData, 'new');
     this.customerService
       .addCustomer(customerData)
       .pipe(takeUntil(this.destroy$))

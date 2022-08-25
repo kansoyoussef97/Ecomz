@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ErrorsInterceptor } from './interceptors/errors.interceptor';
 import { EcomzNavModule } from './shared/ecomz-nav/ecomz-nav.module';
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { EcomzNavModule } from './shared/ecomz-nav/ecomz-nav.module';
     AppRoutingModule,
     HttpClientModule,
     EcomzNavModule,
+    MatSnackBarModule,
   ],
   providers: [
     {
